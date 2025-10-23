@@ -1,133 +1,272 @@
-# Mawazo AI - Your Private Story
+# 🧠 Mawazo AI - Your Private Story
 
-A private, on-device journaling system that builds the story of your life using Chrome's built-in AI. Built with Next.js, shadcn/ui, and modern web technologies.
+> **"Mawazo"** - Swahili for "thoughts" or "ideas"
+
+A private, on-device journaling system powered by Chrome's built-in AI APIs. Capture your thoughts, track moods, and let your story come to life with intelligent assistance.
+
+🌐 **Live Demo**: [https://mawazo-ai.vercel.app/](https://mawazo-ai.vercel.app/)
 
 ## ✨ Features
 
-- **AI-Powered Journaling**: Leverage Chrome's built-in AI APIs for enhanced writing
-- **Private & Secure**: All data stays on your device
-- **Beautiful UI**: Modern glassmorphism design with smooth animations
-- **Mood Tracking**: Track your emotional state with visual mood selectors
-- **Multimodal Input**: Support for text, voice, and image input
-- **Offline-First**: Works completely offline
-- **Progressive Web App**: Installable on any device
-- **Notebook-Style Interface**: Paper-like writing experience with spiral binding effects
-- **Real-time Stats**: Character and word count with live updates
-- **Streak Tracking**: Daily writing streak counter
+### 🎯 Core Functionality
+- **Private Journaling**: All data stays on your device - no cloud storage required
+- **AI-Powered Writing**: Enhanced writing with Chrome's built-in AI APIs
+- **Mood Tracking**: Select and analyze emotional states with 11 different moods
+- **Multi-Modal Input**: Text, voice recording, and photo attachments
+- **Smart Prompts**: AI-generated questions to inspire your writing
+- **Real-time Analysis**: Instant mood detection and writing enhancement
 
-## 🚀 Tech Stack
+### 🤖 AI Capabilities
+- **Writing Enhancement**: Improve your writing style with witty, sarcastic comedy
+- **Smart Summarization**: Generate 4-sentence summaries of your entries
+- **Multi-Language Translation**: Translate to 12 different languages
+- **Grammar Proofreading**: Correct mistakes and improve clarity
+- **Mood Analysis**: Automatically detect emotional tone from your text
+- **Life Story Generation**: Compile entries into comprehensive life stories
 
-- **Framework**: Next.js 15 with App Router
-- **UI Components**: shadcn/ui with Radix UI primitives
-- **Styling**: Tailwind CSS with custom glassmorphism effects
-- **Animations**: Framer Motion for smooth interactions
-- **Icons**: Lucide React & Radix UI Icons
-- **Notifications**: Sonner for toast notifications
-- **TypeScript**: Full type safety
+### 📱 User Experience
+- **Responsive Design**: Optimized for desktop, tablet, and mobile
+- **Beautiful UI**: Notebook-style interface with paper texture effects
+- **Streak Tracking**: Visual fire icon that burns when you maintain daily streaks
+- **Media Attachments**: Support for multiple audio recordings and images
+- **Export Options**: Download summaries and life stories as text files
+- **Offline-First**: Works completely offline once loaded
 
-## 🛠️ Development
+## 🚀 Getting Started
 
 ### Prerequisites
+- **Chrome Browser** (Version 141+ recommended)
+- **Chrome AI APIs** enabled (see setup instructions below)
 
-- Node.js 18+ 
-- npm or yarn
+### Chrome AI Setup
+1. Navigate to `chrome://flags`
+2. Search for "Chrome AI" or "Built-in AI"
+3. Enable "Chrome Built-in AI" flag
+4. Restart Chrome browser
+5. Visit [Mawazo AI](https://mawazo-ai.vercel.app/) to verify AI is working
 
-### Getting Started
+### Local Development
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd mawazo-ai
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/michaelorina/mawazo-ai.git
+cd mawazo-ai
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# Install dependencies
+npm install
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+# Run development server
+npm run dev
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Open http://localhost:3000 in Chrome
+```
 
-### Available Scripts
+## 🏗️ Tech Stack
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+### Frontend
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
+- **Lucide React** - Beautiful icons
 
-## 🎨 Design System
+### AI Integration
+- **Chrome Built-in AI APIs** - Local AI processing
+- **Gemini Nano** - On-device language model
+- **Prompt API** - Dynamic content generation
+- **Summarizer API** - Content summarization
+- **Writer API** - Content creation
+- **Rewriter API** - Content enhancement
+- **Proofreader API** - Grammar correction
+- **Translator API** - Multi-language support
 
-### Color Palette
-- **Primary**: Green gradients for AI features
-- **Background**: Dark theme with subtle green hints
-- **Glass Effects**: Semi-transparent cards with backdrop blur
-- **Accents**: Blue, purple, and pink for different features
+### Storage & Privacy
+- **LocalStorage** - Client-side data persistence
+- **Base64 Encoding** - Media file storage
+- **No External APIs** - Complete privacy protection
 
-### Components
-- **Header**: Glassy navigation with streak counter
-- **Intro Section**: Hero text with animated arrow flow
-- **Journal Entry**: Notebook-style interface with paper texture
-- **AI Tools**: 2x2 grid layout with icon-based navigation
-- **Mood Selector**: Interactive emoji-based selection
-- **Input Controls**: Voice, photo, and AI prompt buttons
+## 📁 Project Structure
 
-### Architecture
-- **Modular Components**: Separated into Header, IntroSection, and JournalEntry
-- **Clean Code**: Removed unused imports and components
-- **Type Safety**: Full TypeScript implementation
-- **Performance**: Optimized with Next.js Image component
+```
+mawazo-ai/
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── globals.css     # Global styles
+│   │   ├── layout.tsx      # Root layout
+│   │   └── page.tsx        # Home page
+│   ├── components/         # React components
+│   │   ├── Header.tsx      # App header with streak
+│   │   ├── IntroSection.tsx # Landing section
+│   │   ├── JournalEntry.tsx # Main writing interface
+│   │   ├── JournalEntries.tsx # Entry management
+│   │   └── ui/            # Reusable UI components
+│   └── lib/               # Utility functions
+│       ├── ai.ts          # Chrome AI integration
+│       ├── storage.ts     # LocalStorage utilities
+│       └── utils.ts       # Helper functions
+├── public/                # Static assets
+│   ├── favicon.svg       # App icon
+│   └── arrow.png         # UI graphics
+└── README.md             # This file
+```
 
-## 🔧 Chrome AI Integration
+## 🎨 Key Components
 
-This app is designed to integrate with Chrome's built-in AI APIs:
+### JournalEntry.tsx
+The main writing interface featuring:
+- **Notebook-style design** with paper texture
+- **AI tool buttons** for enhancement, summarization, translation
+- **Mood selection grid** with 11 emotional states
+- **Media attachment** support for audio and images
+- **Real-time word count** and character tracking
 
-- **Prompt API**: For generating writing prompts
-- **Proofreader API**: For grammar and style improvements
-- **Summarizer API**: For creating entry summaries
-- **Translator API**: For multilingual support
-- **Language Detector**: For automatic language detection
-- **Writer API**: For content generation
-- **Rewriter API**: For content enhancement
+### JournalEntries.tsx
+Entry management system with:
+- **Search and filtering** by mood and date
+- **Edit and delete** functionality
+- **Life story generation** from all entries
+- **Export capabilities** for summaries and stories
 
-## 📱 Progressive Web App
+### AI Integration (ai.ts)
+Comprehensive Chrome AI API wrapper:
+- **Availability detection** for Chrome AI features
+- **Error handling** and fallback mechanisms
+- **Content processing** with markdown cleaning
+- **Multi-modal support** for text, audio, and images
 
-The app is built as a PWA with:
-- Service worker for offline functionality
-- App manifest for installation
-- Responsive design for all devices
-- Fast loading with Next.js optimization
+## 🔒 Privacy & Security
+
+### Data Protection
+- **100% Local Processing**: All AI operations happen on your device
+- **No Data Transmission**: Nothing is sent to external servers
+- **LocalStorage Only**: Data persists only in your browser
+- **No Analytics**: No tracking or data collection
+
+### Security Features
+- **Client-Side Encryption**: Media files stored as Base64
+- **No API Keys**: No external service authentication required
+- **Offline Capability**: Works without internet connection
+- **Browser Sandbox**: Protected by Chrome's security model
+
+## 🎯 Usage Guide
+
+### Writing Your First Entry
+1. **Start Writing**: Type your thoughts in the main text area
+2. **Select Moods**: Choose from 11 emotional states
+3. **Add Media**: Record voice notes or attach photos
+4. **Use AI Tools**: Enhance, summarize, or translate your text
+5. **Save Entry**: Click "Save Entry" to store your thoughts
+
+### AI Features
+- **AI Prompt**: Get inspired with random writing prompts
+- **Enhance Writing**: Add witty, sarcastic details to your text
+- **Summarize**: Generate 4-sentence summaries
+- **Translate**: Convert to 12 different languages
+- **Proofread**: Fix grammar and improve clarity
+- **Analyze Mood**: Automatically detect emotional tone
+
+### Managing Entries
+- **View All**: Browse your journal entries chronologically
+- **Search**: Find entries by content or mood
+- **Edit**: Modify existing entries inline
+- **Delete**: Remove entries you no longer need
+- **Generate Life Story**: Create comprehensive narratives
+
+## 🌍 Supported Languages
+
+The translation feature supports 12 languages:
+- 🇪🇸 Spanish
+- 🇫🇷 French  
+- 🇩🇪 German
+- 🇮🇹 Italian
+- 🇵🇹 Portuguese
+- 🇷🇺 Russian
+- 🇯🇵 Japanese
+- 🇰🇷 Korean
+- 🇨🇳 Chinese
+- 🇸🇦 Arabic
+- 🇮🇳 Hindi
+- 🇳🇱 Dutch
+
+## 🎨 Mood System
+
+Track your emotional state with 11 distinct moods:
+- 😊 **Happy** - Joy and contentment
+- 😢 **Sad** - Melancholy and sorrow
+- ⚡ **Excited** - Enthusiasm and energy
+- ❤️ **Anxious** - Worry and nervousness
+- 🧠 **Peaceful** - Calm and tranquility
+- ❓ **Confused** - Uncertainty and doubt
+- 👍 **Grateful** - Appreciation and thankfulness
+- 🎯 **Motivated** - Drive and determination
+- ☕ **Tired** - Fatigue and exhaustion
+- 🌙 **Reflective** - Thoughtful and contemplative
+- ⭐ **Hopeful** - Optimism and anticipation
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy with zero configuration
+```bash
+# Deploy to Vercel
+vercel --prod
+
+# Or connect GitHub repository for automatic deployments
+```
 
 ### Other Platforms
-The app can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
+The app can be deployed to any static hosting service:
+- **Netlify**: `npm run build && npm run export`
+- **GitHub Pages**: Configure for static site hosting
+- **Firebase Hosting**: Deploy with Firebase CLI
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Here's how to get started:
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and test thoroughly
+4. **Commit your changes**: `git commit -m 'Add amazing feature'`
+5. **Push to the branch**: `git push origin feature/amazing-feature`
+6. **Open a Pull Request**
+
+### Development Guidelines
+- Follow TypeScript best practices
+- Use Tailwind CSS for styling
+- Maintain responsive design principles
+- Test on multiple devices and browsers
+- Ensure Chrome AI compatibility
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Google Chrome Team** - For the innovative built-in AI APIs
+- **Vercel** - For seamless deployment and hosting
+- **Next.js Team** - For the amazing React framework
+- **Tailwind CSS** - For the utility-first CSS framework
+- **Lucide** - For the beautiful icon library
 
 ## 📞 Support
 
-For support, email support@mawazo-ai.com or create an issue in the repository.
+- **Issues**: [GitHub Issues](https://github.com/michaelorina/mawazo-ai/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/michaelorina/mawazo-ai/discussions)
+- **Email**: [Contact Developer](mailto:your-email@example.com)
+
+## 🔮 Future Roadmap
+
+- [ ] **Chrome Extension** version for easier access
+- [ ] **Advanced Analytics** for mood patterns and insights
+- [ ] **Export Options** for PDF and other formats
+- [ ] **Collaborative Features** for shared journaling
+- [ ] **Advanced AI Models** as Chrome AI evolves
+- [ ] **Mobile App** using Capacitor or similar
+- [ ] **Backup & Sync** with encrypted cloud storage (optional)
 
 ---
 
-Built with ❤️ for the Google Chrome Built-in AI Challenge 2025
+**Made with ❤️ for private, intelligent journaling**
+
+*Start your story today at [https://mawazo-ai.vercel.app/](https://mawazo-ai.vercel.app/)*
