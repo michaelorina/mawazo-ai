@@ -421,7 +421,7 @@ export default function JournalEntry() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
-      className="w-full mt-2"
+      className="w-full max-w-full mt-2 px-2 sm:px-0"
     >
           {/* Recording Banner */}
           {isRecording && (
@@ -439,7 +439,7 @@ export default function JournalEntry() {
           )}
 
       {/* Notebook Paper Background */}
-      <div className="relative bg-gradient-to-br from-gray-800/30 via-gray-900/40 to-gray-800/20 min-h-[400px] rounded-2xl border border-gray-700/30 shadow-2xl overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-800/30 via-gray-900/40 to-gray-800/20 min-h-[400px] rounded-2xl border border-gray-700/30 shadow-2xl overflow-hidden w-full max-w-full">
         {/* Paper texture lines */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           {Array.from({ length: 15 }).map((_, i) => (
@@ -462,45 +462,47 @@ export default function JournalEntry() {
           ))}
         </div>
 
-        <div className="pl-12 pr-8 py-4">
+        <div className="pl-8 sm:pl-12 pr-4 sm:pr-8 py-4 overflow-hidden">
           
           {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex items-center justify-between mb-3"
+            className="mb-3"
           >
-            <div>
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
-                📝 My Journal Entry
-              </h2>
-              <div className="flex items-center space-x-4 mt-2 text-sm text-gray-400">
-                <span>{new Date().toLocaleDateString()}</span>
-                <span>•</span>
-                <span>{journalText.length} chars</span>
-                <span>•</span>
-                <span>{journalText.split(' ').filter(word => word.length > 0).length} words</span>
-                {selectedMoods.length > 0 && (
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div className="flex-1">
+                <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
+                  📝 My Journal Entry
+                </h2>
+                <div className="flex flex-wrap items-center gap-1 sm:gap-2 mt-1 sm:mt-2 text-xs sm:text-sm text-gray-400">
+                  <span>{new Date().toLocaleDateString()}</span>
+                  <span>•</span>
+                  <span>{journalText.length} chars</span>
+                  <span>•</span>
+                  <span>{journalText.split(' ').filter(word => word.length > 0).length} words</span>
+                  {selectedMoods.length > 0 && (
+                    <>
+                      <span>•</span>
+                      <span className="text-green-400 font-medium">{selectedMoods.length} mood{selectedMoods.length > 1 ? 's' : ''}</span>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 flex-shrink-0">
+                {isRecording ? (
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-red-400 font-medium">Recording...</span>
+                  </div>
+                ) : (
                   <>
-                    <span>•</span>
-                    <span>{selectedMoods.length} mood{selectedMoods.length > 1 ? 's' : ''}: {selectedMoods.join(', ')}</span>
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-gray-400">Writing...</span>
                   </>
                 )}
               </div>
-            </div>
-            <div className="flex items-center space-x-2">
-                  {isRecording ? (
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-                      <span className="text-xs text-red-400 font-medium">Recording...</span>
-                    </div>
-                  ) : (
-                    <>
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-gray-400">Writing...</span>
-                    </>
-                  )}
             </div>
           </motion.div>
 
@@ -785,25 +787,25 @@ export default function JournalEntry() {
             <h3 className="text-lg font-semibold bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent mb-2">
               How are you feeling? {selectedMoods.length > 0 && <span className="text-sm text-gray-400">({selectedMoods.length} selected)</span>}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {moods.map((mood) => {
                 const IconComponent = mood.icon
                 const isSelected = selectedMoods.includes(mood.value)
                 return (
                 <motion.button
                   key={mood.value}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => handleMoodSelect(mood.value)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-full transition-all border ${
+                  className={`flex flex-col items-center space-y-1 px-2 py-3 rounded-lg transition-all border ${
                       isSelected
                       ? 'bg-green-500/20 border-green-400 shadow-lg'
                       : 'border-gray-600/40 hover:bg-gray-700/50 hover:border-gray-500/50'
                   }`}
                 >
                     <IconComponent className={`w-5 h-5 ${mood.color} ${isSelected ? 'opacity-100' : 'opacity-70'}`} />
-                  <span className="text-sm text-gray-300">{mood.label}</span>
-                    {isSelected && <CheckCircle className="w-4 h-4 text-green-400" />}
+                  <span className="text-xs text-gray-300 text-center leading-tight">{mood.label}</span>
+                    {isSelected && <CheckCircle className="w-3 h-3 text-green-400 mt-1" />}
                 </motion.button>
                 )
               })}
