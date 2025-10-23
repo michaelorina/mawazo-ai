@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mawazo AI - Your Private Story
 
-## Getting Started
+A private, on-device journaling system that builds the story of your life using Chrome's built-in AI. Built with Next.js, shadcn/ui, and modern web technologies.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI-Powered Journaling**: Leverage Chrome's built-in AI APIs for enhanced writing
+- **Private & Secure**: All data stays on your device
+- **Beautiful UI**: Modern glassmorphism design with smooth animations
+- **Mood Tracking**: Track your emotional state with visual mood selectors
+- **Multimodal Input**: Support for text, voice, and image input
+- **Offline-First**: Works completely offline
+- **Progressive Web App**: Installable on any device
+- **Notebook-Style Interface**: Paper-like writing experience with spiral binding effects
+- **Real-time Stats**: Character and word count with live updates
+- **Streak Tracking**: Daily writing streak counter
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 15 with App Router
+- **UI Components**: shadcn/ui with Radix UI primitives
+- **Styling**: Tailwind CSS with custom glassmorphism effects
+- **Animations**: Framer Motion for smooth interactions
+- **Icons**: Lucide React & Radix UI Icons
+- **Notifications**: Sonner for toast notifications
+- **TypeScript**: Full type safety
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Development
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 18+ 
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd mawazo-ai
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: Green gradients for AI features
+- **Background**: Dark theme with subtle green hints
+- **Glass Effects**: Semi-transparent cards with backdrop blur
+- **Accents**: Blue, purple, and pink for different features
+
+### Components
+- **Header**: Glassy navigation with streak counter
+- **Intro Section**: Hero text with animated arrow flow
+- **Journal Entry**: Notebook-style interface with paper texture
+- **AI Tools**: 2x2 grid layout with icon-based navigation
+- **Mood Selector**: Interactive emoji-based selection
+- **Input Controls**: Voice, photo, and AI prompt buttons
+
+### Architecture
+- **Modular Components**: Separated into Header, IntroSection, and JournalEntry
+- **Clean Code**: Removed unused imports and components
+- **Type Safety**: Full TypeScript implementation
+- **Performance**: Optimized with Next.js Image component
+
+## 🔧 Chrome AI Integration
+
+This app is designed to integrate with Chrome's built-in AI APIs:
+
+- **Prompt API**: For generating writing prompts
+- **Proofreader API**: For grammar and style improvements
+- **Summarizer API**: For creating entry summaries
+- **Translator API**: For multilingual support
+- **Language Detector**: For automatic language detection
+- **Writer API**: For content generation
+- **Rewriter API**: For content enhancement
+
+## 📱 Progressive Web App
+
+The app is built as a PWA with:
+- Service worker for offline functionality
+- App manifest for installation
+- Responsive design for all devices
+- Fast loading with Next.js optimization
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy with zero configuration
+
+### Other Platforms
+The app can be deployed to any platform that supports Next.js:
+- Netlify
+- Railway
+- DigitalOcean App Platform
+- AWS Amplify
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Support
+
+For support, email support@mawazo-ai.com or create an issue in the repository.
+
+---
+
+Built with ❤️ for the Google Chrome Built-in AI Challenge 2025
